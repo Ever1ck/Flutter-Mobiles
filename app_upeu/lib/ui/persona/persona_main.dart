@@ -1,5 +1,7 @@
 import 'package:app_upeu/apis/persona_api.dart';
 import 'package:app_upeu/comp/TabItem.dart';
+import 'package:app_upeu/ui/persona/persona_edit.dart';
+import 'package:app_upeu/ui/persona/persona_form.dart';
 import 'package:app_upeu/util/TokenUtil.dart';
 //import 'package:app_upeu/ui/persona/beneficiario_edit.dart';
 //import 'package:app_upeu/ui/persona/beneficiario_form.dart';
@@ -89,10 +91,10 @@ class _PersonaUIState extends State<PersonaUI> {
                   //final producto=new ModeloProductos();
                   //formDialog(context, producto);
                   print("Si funciona 2");
-                  /*Navigator.push(
+                  Navigator.push(
                     context,
                     MaterialPageRoute(builder: (context) => PersonaForm()),
-                  ).then(onGoBack);*/
+                  ).then(onGoBack);
                 },
                 child: Icon(Icons.add_box_sharp),
               ),
@@ -178,16 +180,18 @@ class _PersonaUIState extends State<PersonaUI> {
                             children: <Widget>[
                               IconButton(
                                   icon: Icon(Icons.edit),
+                                  color: AppTheme.themeData.colorScheme.primary,
                                   onPressed: () {
-                                    /*Navigator.push(
+                                    Navigator.push(
                                       context,
                                       MaterialPageRoute(
                                           builder: (context) => PersonaFormEdit(
                                               modelP: personax)),
-                                    ).then(onGoBack);*/
+                                    ).then(onGoBack);
                                   }),
                               IconButton(
                                   icon: Icon(Icons.delete),
+                                  color: AppTheme.themeData.colorScheme.error,
                                   onPressed: () {
                                     showDialog(
                                         context: context,
@@ -216,11 +220,12 @@ class _PersonaUIState extends State<PersonaUI> {
                                         }).then((value) {
                                       if (value.toString() == "Success") {
                                         print(personax.id);
-                                        /*
+
                                         Provider.of<PersonaApi>(context,
                                                 listen: false)
-                                            .deletePersona(persona.id)
-                                            .then((value) => onGoBack(value));*/
+                                            .deletePersona(
+                                                TokenUtil.TOKEN, personax.id)
+                                            .then((value) => onGoBack(value));
                                         //var onGoBack = onGoBack;
                                         //BlocProvider.of<ProductosBloc>(context).add(DeleteProductoEvent(producto: state.productosList[index]));
                                       }
@@ -241,7 +246,7 @@ class _PersonaUIState extends State<PersonaUI> {
   int selectedPosition = 0;
   _buildBottomTab() {
     return BottomAppBar(
-      color: Colors.deepPurple,
+      color: AppTheme.themeData.colorScheme.primary,
       shape: CircularNotchedRectangle(),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,

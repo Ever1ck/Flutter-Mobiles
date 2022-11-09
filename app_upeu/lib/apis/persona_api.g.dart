@@ -29,27 +29,87 @@ class _PersonaApi implements PersonaApi {
   }
 
   @override
-  Future<ResponseModelo> createPersona(String token, PersonaModelo persona) {
-    // TODO: implement createPersona
-    throw UnimplementedError();
+  createPersona(token, persona) async {
+    ArgumentError.checkNotNull(persona, 'persona');
+    const _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _data = <String, dynamic>{};
+    _data.addAll(persona.toJson() ?? <String, dynamic>{});
+    final Response<Map<String, dynamic>> _result = await _dio.request(
+        '/api/persona',
+        queryParameters: queryParameters,
+        options: RequestOptions(
+            method: 'POST',
+            headers: <String, dynamic>{"Authorization": token},
+            extra: _extra,
+            baseUrl: baseUrl),
+        data: _data);
+    final value = ResponseModelo.fromJson(_result.data);
+    return Future.value(value);
   }
 
   @override
-  Future<ResponseModelo> deletePersona(String token, int id) {
-    // TODO: implement deletePersona
-    throw UnimplementedError();
+  deletePersona(token, id) async {
+    ArgumentError.checkNotNull(token, 'persona');
+    ArgumentError.checkNotNull(id, '0');
+    const _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _data = <String, dynamic>{};
+    final Response<Map<String, dynamic>> _result = await _dio.request(
+        '/api/persona/$id',
+        queryParameters: queryParameters,
+        options: RequestOptions(
+            method: 'DELETE',
+            headers: <String, dynamic>{"Authorization": token},
+            extra: _extra,
+            baseUrl: baseUrl),
+        data: _data);
+    final value = ResponseModelo.fromJson(_result.data);
+    return Future.value(value);
   }
 
   @override
-  Future<ResponseModelo> getPersona(String token) {
-    // TODO: implement getPersona
-    throw UnimplementedError();
+  getPersona(token) async {
+    final prefs = await SharedPreferences.getInstance();
+//var tokenx = prefs.getString("token");
+    ArgumentError.checkNotNull(token, "token");
+    const _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _data = <String, dynamic>{};
+    final Response<Map<String, dynamic>> _result = await _dio.request(
+        '/api/persona/',
+        queryParameters: queryParameters,
+        options: RequestOptions(
+            method: 'GET',
+            headers: <String, dynamic>{"Authorization": token},
+            extra: _extra,
+            baseUrl: baseUrl),
+        data: _data);
+/*var value = _result.data.map((dynamic i) =>
+PersonaModelo.fromJson(i as Map<String, dynamic>))
+.toList();*/
+    var value = ResponseModelo.fromJson(_result.data);
+    return Future.value(value);
   }
 
   @override
-  Future<ResponseModelo> updatePersona(
-      String token, int id, PersonaModelo persona) {
-    // TODO: implement updatePersona
-    throw UnimplementedError();
+  updatePersona(token, id, persona) async {
+    ArgumentError.checkNotNull(id, '0');
+    ArgumentError.checkNotNull(persona, 'persona');
+    const _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _data = <String, dynamic>{};
+    _data.addAll(persona.toJson() ?? <String, dynamic>{});
+    final Response<Map<String, dynamic>> _result = await _dio.request(
+        '/api/persona/$id',
+        queryParameters: queryParameters,
+        options: RequestOptions(
+            method: 'PATCH',
+            headers: <String, dynamic>{"Authorization": token},
+            extra: _extra,
+            baseUrl: baseUrl),
+        data: _data);
+    final value = ResponseModelo.fromJson(_result.data);
+    return Future.value(value);
   }
 }
