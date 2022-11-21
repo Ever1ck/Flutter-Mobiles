@@ -43,12 +43,12 @@ class _HomeDrawerState extends State<HomeDrawer> {
       ),
       DrawerList(
         index: DrawerIndex.Help,
-        labelName: 'Beneficiario BlocFire',
+        labelName: 'Persona Bloc',
         icon: Icon(Icons.help),
       ),
       DrawerList(
         index: DrawerIndex.Invite,
-        labelName: 'Grafico 02',
+        labelName: 'Persona Bloc Fire',
         icon: Icon(Icons.group),
       ),
       /*DrawerList(

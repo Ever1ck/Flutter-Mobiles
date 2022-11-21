@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.app_upeu">
+    package="com.everick.app_upeu_everick">
    <application
         android:label="app_upeu"
         android:name="${applicationName}"

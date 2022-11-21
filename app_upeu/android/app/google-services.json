@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "870683995852",
+    "project_id": "app-upeu-prueba",
+    "storage_bucket": "app-upeu-prueba.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:870683995852:android:125b5a8bcb733f589b1c69",
+        "android_client_info": {
+          "package_name": "com.everick.app_upeu_everick"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "870683995852-agq9gi3sfm224997duqn63fvspbj7qvg.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.everick.app_upeu_everick",
+            "certificate_hash": "3cd4f34f6978e17ad0d2dac0f4fe78081e40fc51"
+          }
+        },
+        {
+          "client_id": "870683995852-f7mu7i2hveergbh2ghh3hrris64p1j8q.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDpTwFwAQnGP3IO4BRoNPCVkba1InLw2oE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "870683995852-f7mu7i2hveergbh2ghh3hrris64p1j8q.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

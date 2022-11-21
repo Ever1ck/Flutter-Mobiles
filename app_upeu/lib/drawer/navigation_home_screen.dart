@@ -8,6 +8,8 @@ import 'package:app_upeu/ui/help_screen.dart';
 //import 'package:covidapp/drawer/feedback_screen.dart';
 import 'package:app_upeu/ui/help_screen.dart';
 import 'package:app_upeu/ui/persona/persona_main.dart';
+import 'package:app_upeu/ui/personaFire/persona_main.dart';
+import 'package:app_upeu/ui/personab/persona_main.dart';
 
 //import 'package:covidapp/drawer/home_screen.dart';
 //import 'package:covidapp/drawer/invite_friend_screen.dart';
@@ -67,7 +69,11 @@ class _NavigationHomeScreenState extends State<NavigationHomeScreen> {
         });
       } else if (drawerIndex == DrawerIndex.Help) {
         setState(() {
-          //screenView = MainBeneficiarioFire();
+          screenView = MainPersonaB();
+        });
+      } else if (drawerIndex == DrawerIndex.Invite) {
+        setState(() {
+          screenView = MainPersonaBFire();
         });
       } else {
         //do in your way......

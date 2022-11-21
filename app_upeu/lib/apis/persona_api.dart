@@ -1,4 +1,5 @@
 import 'package:app_upeu/modelo/PersonaModelo.dart';
+import 'package:app_upeu/modelo/PersonaModeloFire.dart';
 import 'package:app_upeu/modelo/UsuarioModelo.dart';
 import 'package:app_upeu/util/UrlApi.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
